@@ -1,0 +1,23 @@
+layout {
+  pane split_direction="vertical" {
+    pane {
+      command "nvim"
+      name "Neovim"
+    }
+    pane split_direction="horizontal" {
+      pane {
+        name "Command Line"
+      }
+      pane split_direction="vertical" {
+        pane {
+          command "cava"
+          name "Audio Visualizer"
+        }
+        pane {
+          command "cmatrix"
+          name "Matrix"
+        }
+      }
+    }
+  }
+}
