@@ -1,6 +1,6 @@
 # apurplefrog's Dotfiles
 
-[Screenshot of Environment](./screenshot.png)
+![Screenshot of Environment](./screenshot.png)
 
 - OS: NixOS
 - WM: i3WM
