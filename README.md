@@ -1,0 +1,10 @@
+# apurplefrog's Dotfiles
+
+- OS: NixOS
+- WM: i3WM
+- Compositor: picom
+- Bar: polybar
+- Terminal Emulator: kitty
+- Text Editor: NeoVim
+- Theme: Catppuccin Mocha
+- Browser: FireFox with BetterFox user.js

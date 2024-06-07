@@ -16,7 +16,7 @@ vim.opt.relativenumber = true -- add numbers to each line on the left side
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 vim.opt.fillchars = {eob = " "} -- remove tildes at end of buffer
-vim.opt.cursorline = true -- show cursor line
+-- vim.opt.cursorline = true -- show cursor line
 vim.opt.wildmode = "longest,list"
 vim.opt.showmatch = true -- highlight matching brace
 

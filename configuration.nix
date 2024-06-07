@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -22,7 +22,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+    networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -31,18 +31,40 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the Cinnamon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
+    enable = true;
+    desktopManager = {
+      xterm.enable = false;
+    };
+    displayManager = {
+      defaultSession = "none+i3";
+    };
     layout = "us";
     xkbVariant = "";
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        picom
+        polybar
+        feh
+        rofi
+        rofi-power-menu
+        rofi-screenshot
+        brightnessctl
+        i3lock #default i3 screen locker
+      ];
+    };
+    libinput = {
+      enable = true;
+      touchpad = {
+        naturalScrolling = true;
+        accelProfile = "flat"; 
+      };
+    };
   };
 
+  services.blueman.enable = true;
+  
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -56,12 +78,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-
+    #jack.enable = true;
+  
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -80,7 +105,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Allow flakes
+  # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.zsh.enable = true;
@@ -88,19 +113,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    eza
+    man-pages
+    man-pages-posix
+    networkmanagerapplet
+    killall
+    firefox
     gnome.ghex
     home-manager
     nasm
     wget
     neovim
-    firefox
     obs-studio
     vesktop
     audacity
     git
-    spotify
+    spotify-tui
+    spotifyd
     gimp
-    zellij
     ripgrep
     nodejs_21
     python3
@@ -117,9 +147,6 @@
     file
     gdb
     lunar-client
-    #catppuccin
-    catppuccin-gtk
-    catppuccin-papirus-folders
     # Some fun ones :p
     lolcat
     sl
@@ -127,39 +154,14 @@
     cowsay
     cava
     cmatrix
-    # Hyprland setup
-    #(waybar.overrideAttrs (oldAttrs: {
-    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    # })
-    #)
-    #dunst
-    #libnotify
-    #hyprpaper
-    #rofi-wayland
     kitty
-    #hyprland
   ];
-
-  #catppuccin.flavor = "mocha";
-  #programs.startship = {
-  #  enable = true;
-  #  catppuccin.enable = true;
-  #};
-  #catppuccin.enable = true;
-
-  # Setup hyprland
-  # programs.hyprland = {
-  #  enable = true;
-  # xwayland.enable = true;
-  #};
-  #xdg.portal.enable = true;
-  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Install Specific Nerd Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = [
-      "FiraCode"
-      "CascadiaCode"
+     "FiraCode"
+     "CascadiaCode"
     ];})
   ];
 
@@ -196,6 +198,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
-
+  system.stateVersion = "24.05"; # Did you read the comment?
 }
+
