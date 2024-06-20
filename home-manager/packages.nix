@@ -1,0 +1,38 @@
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    audacity
+    betterdiscordctl
+    cava
+    cmatrix
+    cowsay
+    discord-ptb
+    eza
+    file
+    firefox
+    fzf
+    gcc
+    gdb
+    ghidra
+    gimp
+    git
+    killall
+    lf
+    lolcat
+    lunar-client
+    man-pages
+    man-pages-posix
+    nasm
+    nix-prefetch-git
+    obs-studio
+    python3
+    ripgrep
+    rustup
+    sl
+    spotify
+    tokei
+    tree
+    unzip
+    vlc
+    xclip
+  ];
+}
