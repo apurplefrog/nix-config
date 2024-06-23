@@ -12,12 +12,16 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     nixvim,
+    spicetify-nix,
     ...}:
     let
       system = "x86_64-linux";
@@ -30,11 +34,13 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
+          #./programs/spotify.nix
           nixvim.homeManagerModules.nixvim
         ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {inherit spicetify-nix;};
       };
     };
 }

@@ -3,6 +3,7 @@
     ./programs
     ./packages.nix
     ./gtk.nix
+    ./wm
   ];
 
   home.username = "autumn";
@@ -12,6 +13,7 @@
   home.pointerCursor = {
     name = "catppuccin-mocha-mauve-cursors";
     package = pkgs.catppuccin-cursors.mochaMauve;
+    size = 12;
   };
 
   nixpkgs.config.allowUnfree = true;

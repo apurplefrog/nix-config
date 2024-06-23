@@ -9,7 +9,7 @@
         };
         pyright.enable = true;
         nil-ls.enable = true;
-        clang.enable = true;
+        clangd.enable = true;
         rust-analyzer = {
           enable = true;
           installCargo = true;
@@ -30,21 +30,24 @@
         snippet = {expand = "luasnip";};
         formatting = {fields = ["kind" "abbr" "menu"];};
         sources = [
-        {name = "nvim_lsp";}
-        {name = "emoji";}
-        {
-          name = "buffer"; # text within current buffer
+          {name = "nvim_lsp";}
+          {name = "emoji";}
+          
+          {
+            name = "buffer"; # text within current buffer
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          keywordLength = 3;
-        }
-        {
-          name = "path"; # file system paths
             keywordLength = 3;
-        }
-        {
-          name = "luasnip"; # snippets
+          }
+          
+          {
+            name = "path"; # file system paths
             keywordLength = 3;
-        }
+          }
+
+          {
+            name = "luasnip"; # snippets
+            keywordLength = 3;
+          }
         ];
 
         window = {
@@ -66,7 +69,7 @@
       };
     };
   cmp-nvim-lsp = {enable = true;}; # lsp
-    cmp-buffer = {enable = true;};
+  cmp-buffer = {enable = true;};
   cmp-path = {enable = true;}; # file system paths
     cmp_luasnip = {enable = true;}; # snippets
     cmp-cmdline = {enable = false;}; # autocomplete for cmdline

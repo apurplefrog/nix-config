@@ -1,14 +1,16 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    armcord
     audacity
-    betterdiscordctl
     cava
     cmatrix
     cowsay
     discord-ptb
     eza
+    feh
     file
     firefox
+    flameshot
     fzf
     gcc
     gdb
@@ -28,7 +30,6 @@
     ripgrep
     rustup
     sl
-    spotify
     tokei
     tree
     unzip

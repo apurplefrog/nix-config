@@ -11,7 +11,6 @@
     };
     plugins = [
       {
-        # will source zsh-autosuggestions.plugin.zsh
         name = "zsh-autosuggestions";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";

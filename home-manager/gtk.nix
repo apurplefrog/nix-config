@@ -8,13 +8,19 @@
     };
 
     theme = {
-      name = "Catppuccin-Mocha-Standard-Mauve";
+      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = ["mauve"];
         size = "standard";
         tweaks = [];
         variant = "mocha";
       };
+    };
+
+    cursorTheme = {
+      name = "catppuccin-mocha-mauve-cursors";
+      package = pkgs.catppuccin-cursors.mochaMauve;
+      size = 12;
     };
 
     iconTheme = {
