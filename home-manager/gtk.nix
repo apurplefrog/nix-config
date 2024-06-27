@@ -16,13 +16,7 @@
         variant = "mocha";
       };
     };
-
-    cursorTheme = {
-      name = "catppuccin-mocha-mauve-cursors";
-      package = pkgs.catppuccin-cursors.mochaMauve;
-      size = 12;
-    };
-
+    
     iconTheme = {
       package = pkgs.catppuccin-papirus-folders.override {
         flavor = "mocha";
@@ -30,5 +24,6 @@
       };
       name = "Papirus-Dark";
     };
+
   };
 }

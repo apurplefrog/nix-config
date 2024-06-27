@@ -1,9 +1,9 @@
 {pkgs, ... }: {
   imports = [
     ./programs
-    ./packages.nix
-    ./gtk.nix
     ./wm
+    ./gtk.nix
+    ./packages.nix
   ];
 
   home.username = "autumn";
@@ -13,7 +13,6 @@
   home.pointerCursor = {
     name = "catppuccin-mocha-mauve-cursors";
     package = pkgs.catppuccin-cursors.mochaMauve;
-    size = 12;
   };
 
   nixpkgs.config.allowUnfree = true;

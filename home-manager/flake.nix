@@ -4,6 +4,7 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +20,7 @@
 
   outputs = {
     nixpkgs,
+    catppuccin,
     home-manager,
     nixvim,
     spicetify-nix,
@@ -34,8 +36,8 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          #./programs/spotify.nix
           nixvim.homeManagerModules.nixvim
+          catppuccin.homeManagerModules.catppuccin
         ];
 
         # Optionally use extraSpecialArgs

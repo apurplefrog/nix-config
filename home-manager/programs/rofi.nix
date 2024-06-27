@@ -1,9 +1,4 @@
-{pkgs, config, ...}: {
-  home.packages = with pkgs; [
-    rofi-power-menu
-    rofi-screenshot
-  ];
-
+{config, ...}: {
   programs.rofi = {
     enable = true;
     extraConfig = {

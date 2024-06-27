@@ -4,10 +4,9 @@
 
     ./bat.nix
     ./btop.nix
+    ./cava.nix
     ./fastfetch.nix
     ./kitty.nix
-    ./polybar.nix
-    ./qutebrowser.nix
     ./rofi.nix
     ./spotify.nix
     ./yazi.nix

@@ -1,6 +1,7 @@
 {...}: {
 
   imports = [
+    ./conform.nix
     ./options.nix
     ./keymaps.nix
     ./plugins.nix

@@ -1,24 +1,20 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    armcord
     audacity
-    cava
+    cbonsai
     cmatrix
     cowsay
-    discord-ptb
     eza
-    feh
     file
     firefox
-    flameshot
     fzf
     gcc
     gdb
     ghidra
     gimp
     git
+    hyprshot
     killall
-    lf
     lolcat
     lunar-client
     man-pages
@@ -26,14 +22,16 @@
     nasm
     nix-prefetch-git
     obs-studio
+    pipes
     python3
     ripgrep
     rustup
     sl
     tokei
+    tty-clock
     tree
     unzip
+    vesktop
     vlc
-    xclip
   ];
 }
