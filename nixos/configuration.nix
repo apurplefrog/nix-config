@@ -30,19 +30,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  services.xserver = {
-    enable = true;
-    windowManager.bspwm.enable = true;
-    libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-        accelProfile = "flat";
-      };
-    };
-  };
-
-
   # Enable the X11 windowing system.
   #services.xserver = {
   # enable = true;
@@ -50,11 +37,11 @@
   #   xterm.enable = false;
   # };
   # displayManager = {
-  #   defaultSession = "none+bspwm";
+  #   defaultSession = "none+i3";
   # };
   # layout = "us";
   # xkbVariant = "";
-  # windowManager.bspwm = {
+  # windowManager.i3 = {
   #   enable = true;
   #   extraPackages = with pkgs; [
   #     picom
@@ -62,7 +49,7 @@
   #     feh
   #     brightnessctl
   #     i3lock #default i3 screen locker
- #    ];
+  #   ];
   # };
   # libinput = {
   #   enable = true;
@@ -70,8 +57,17 @@
   #     naturalScrolling = true;
   #     accelProfile = "flat"; 
   #   };
-  #  };
-  #};
+  # };
+  #;
+
+
+  programs.hyprland = {
+    enable = true;
+  };
+
+  programs.steam = {
+    enable = true;
+  };
 
   services.blueman.enable = true;
   
@@ -122,16 +118,17 @@
   
   programs.zsh.enable = true;
 
+  programs.thunar.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bspwm
-    sxhkd
     wget
     networkmanagerapplet
     nodejs_21
     home-manager
     gparted
+    hyprpaper
   ];
 
   # Install Specific Nerd Fonts
