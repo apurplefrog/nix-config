@@ -1,0 +1,34 @@
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    audacity
+    cmatrix
+    eza
+    file
+    firefox
+    fzf
+    gcc
+    gdb
+    ghidra
+    gimp
+    git
+    hyprshot
+    killall
+    lunar-client
+    man-pages
+    man-pages-posix
+    nasm
+    nix-prefetch-git
+    nodejs_22
+    obs-studio
+    python3
+    ripgrep
+    rustup
+    tokei
+    tor-browser
+    tree
+    unzip
+    vesktop
+    vlc
+    wl-clipboard
+  ];
+}
