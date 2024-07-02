@@ -2,4 +2,4 @@
 <img src="preview.png" />
 personal nixos & home-manager configurations :3
 
-<p>flowery background image by <a href="https://unsplash.com/@mariashanina"></a></p>
+<p>flowery background image by <a href="https://unsplash.com/@mariashanina">https://unsplash.com/@mariashanina</a></p>
