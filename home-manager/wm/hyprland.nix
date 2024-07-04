@@ -11,6 +11,7 @@
       $menu = rofi -show drun 
       $screenshot = hyprshot -z -m region --clipboard-only
       $powermenu = rofi -show power-menu -modi power-menu:rofi-power-menu
+      $lockscreen = hyprlock
 
       exec-once = waybar & hyprpaper
 
@@ -113,6 +114,8 @@
     bind = $mainMod, P, exec, $powermenu
 
     bind = $mainMod, F, fullscreen
+
+    bind = $mainMod, O, exec, $lockscreen
 
     bind = $mainMod, left, movefocus, l
     bind = $mainMod, right, movefocus, r
