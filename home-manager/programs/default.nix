@@ -10,6 +10,7 @@
     ./mako.nix
     ./rofi.nix
     ./spotify.nix
+    ./waybar.nix
     ./yazi.nix
     ./zsh.nix
   ];

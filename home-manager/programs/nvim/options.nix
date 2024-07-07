@@ -1,10 +1,11 @@
 {inputs, ...}: {
   programs.nixvim = {
-    colorschemes.catppuccin = {
-      enable = true;
-      settings.flavor = "mocha";
-    };
+    #colorschemes.catppuccin = {
+    #  enable = true;
+    #  settings.flavor = "mocha";
+    #};
     opts = {
+      fillchars = "eob: ";
       number = true;
       relativenumber = true;
 

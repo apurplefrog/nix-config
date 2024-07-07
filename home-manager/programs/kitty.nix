@@ -9,9 +9,5 @@
       open_url_with = "firefox";
       cursor_blink_interval = 0;
     };
-    font = {
-      name = "CaskaydiaCove Nerd Font";
-      size = 12;
-    };
   };
 }

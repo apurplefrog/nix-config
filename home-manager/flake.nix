@@ -16,6 +16,7 @@
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
     };
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -24,6 +25,7 @@
     home-manager,
     nixvim,
     spicetify-nix,
+    stylix, 
     ...}:
     let
       system = "x86_64-linux";
@@ -38,6 +40,7 @@
           ./home.nix
           nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
+          stylix.homeManagerModules.stylix
         ];
 
         # Optionally use extraSpecialArgs

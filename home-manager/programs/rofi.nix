@@ -34,7 +34,6 @@
 
       "window" = {
         height = mkLiteral "360px";
-        border = mkLiteral "3px";
       };
 
       "inputbar" = {
