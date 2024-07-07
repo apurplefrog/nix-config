@@ -4,24 +4,17 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     stylix.url = "github:danth/stylix";
   };
 
   outputs = {
     nixpkgs,
-    catppuccin,
     home-manager,
     nixvim,
     spicetify-nix,
@@ -39,7 +32,6 @@
         modules = [
           ./home.nix
           nixvim.homeManagerModules.nixvim
-          catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
         ];
 

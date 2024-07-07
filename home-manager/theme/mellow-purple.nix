@@ -2,10 +2,7 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "mauve";
-      };
+      package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };
@@ -22,16 +19,14 @@
         name = "noto-fonts-emoji";
       };
     };
-    cursor = {
-      name = "catppuccin-mocha-mauve-cursors";
-      package = pkgs.catppuccin-cursors.mochaMauve;
-      size = 24;
-    };
+
+    cursor.size = 24;
+  
     base16Scheme = {
       base00 = "1e0528";
       base01 = "1A092D";
       base02 = "331354";
-      base03 = "320f55";
+      base03 = "873582";
       base04 = "873582";
       base05 = "ffeeff";
       base06 = "ffeeff";
@@ -41,7 +36,7 @@
       base0A = "955ae7";
       base0B = "05cb0d";
       base0C = "b900b1";
-      base0D = "550068";
+      base0D = "aa00d0";
       base0E = "8991bb";
       base0F = "4d6fff";
     };

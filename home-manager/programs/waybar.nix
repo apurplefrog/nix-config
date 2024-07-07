@@ -1,7 +1,6 @@
 {...}: {
   programs.waybar = {
     enable = true;
-    catppuccin.enable = false;
     style = ''
       * {
         border-radius: 10pt;
