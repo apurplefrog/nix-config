@@ -1,11 +1,14 @@
-{inputs, ...}: {
+{...}: {
   programs.nixvim.plugins.telescope = {
     enable = true;
     extensions = {
       file-browser.enable = true;
       fzf-native.enable = true;
+      media-files.enable = true;
     };
     settings = {
+      pickers.colorscheme.enable_preview = true;
+
       defaults = {
         layout_config = {
           horizontal = {

@@ -1,12 +1,10 @@
 {...}: {
-
   imports = [
-    ./none-ls.nix
-    ./options.nix
+    ./cmp
+    ./plugins
+
     ./keymaps.nix
-    ./plugins.nix
-    ./lsp.nix
-    ./telescope.nix
+    ./options.nix
   ];
 
   programs.nixvim = {

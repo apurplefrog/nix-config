@@ -9,5 +9,8 @@
       open_url_with = "firefox";
       cursor_blink_interval = 0;
     };
+    keybindings = {
+      "ctrl+shift+n" = "";
+    };
   };
 }
