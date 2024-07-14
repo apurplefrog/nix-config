@@ -8,7 +8,7 @@
   };
 
   stylix = let
-    fontSet = {
+    font = {
       name = "0xProto";
       package = pkgs.nerdfonts.override {fonts = ["0xProto"];};
     };
@@ -17,9 +17,9 @@
     enable = true;
     image = ./background-images/bgimage.jpg;
     fonts = {
-      serif = fontSet;
-      sansSerif = fontSet;
-      emoji = fontSet;
+      serif = font;
+      sansSerif = font;
+      emoji = font;
     };
 
     cursor.size = 24;

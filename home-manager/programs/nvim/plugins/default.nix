@@ -5,11 +5,12 @@
   ];
 
   programs.nixvim.plugins = {
-    nvim-tree.enable = true;
     bufferline.enable = true;
-    lualine.enable = true;
-    nvim-autopairs.enable = true;
     comment.enable = true;
+    image.enable = true;
+    lualine.enable = true;
+    nvim-tree.enable = true;
+    nvim-autopairs.enable = true;
     treesitter.enable = true;
   };
 }

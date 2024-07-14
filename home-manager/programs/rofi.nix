@@ -2,6 +2,7 @@
   home.packages = [
     pkgs.rofi-power-menu
   ];
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
@@ -24,7 +25,6 @@
     in {
       "*" = {
         width = 600;
-        font = "CaskaydiaCove Nerd Font 14";
       };
 
       "element-text, element-icon, mode-switcher" = {

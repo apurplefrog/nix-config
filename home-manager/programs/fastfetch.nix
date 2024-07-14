@@ -13,10 +13,10 @@
           "type" = "custom";
           "format" = " System";
         }
-        {
-          "type" = "title";
-          "key" = " ";
-        }
+#        {
+#          "type" = "title";
+#          "key" = " ";
+#        }
         {
           "type" = "os";
           "key" = " ❄️";

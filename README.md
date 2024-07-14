@@ -1,6 +1,8 @@
 <h2 alig="center"><b>❄️ apurplefrog's NixOS Configuration ❄️</b></h2>
 personal nixos & home-manager configurations :3
 
+nix is pretty cool ngl
+
 <h3>Sakura</h3>
 <img src="./preview-images/sakura.png" alt="Computer with Sakura theme" />
 

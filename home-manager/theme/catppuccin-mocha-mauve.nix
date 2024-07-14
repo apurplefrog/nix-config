@@ -1,4 +1,4 @@
-{pkgs, config, ...}: {
+{pkgs, ...}: {
   gtk = {
     enable = true;
     iconTheme = {
@@ -10,16 +10,19 @@
     };
   };
 
-  stylix = {
+  stylix = let
+    font = {
+      name = "FiraCode Nerd Font";
+      package = pkgs.nerdfonts.override {fonts = ["FiraCode"];};
+    };
+  in {
     enable = true;
     image = ./background-images/maria-flowers.jpg;
     fonts = {
-      serif = config.stylix.fonts.monospace;
-      sansSerif = config.stylix.fonts.monospace;
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "noto-fonts-emoji";
-      };
+      serif = font;
+      sansSerif = font;
+      emoji = font;
+      monospace = font;
     };
     cursor = {
       name = "catppuccin-mocha-mauve-cursors";

@@ -1,4 +1,4 @@
-{pkgs, config, ...}: {
+{pkgs, ...}: {
   gtk = {
     enable = true;
     iconTheme = {
@@ -7,21 +7,23 @@
     };
   };
 
-  stylix = {
+  stylix = let
+    font = {
+      name = "0xProto";
+      package = pkgs.nerdfonts.override {fonts = ["0xProto"];};
+    };
+  in {
     polarity = "dark";
     enable = true;
     image = ./background-images/bgimage.jpg;
     fonts = {
-      serif = config.stylix.fonts.monospace;
-      sansSerif = config.stylix.fonts.monospace;
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "noto-fonts-emoji";
-      };
+      serif = font;
+      sansSerif = font;
+      emoji = font;
     };
 
     cursor.size = 24;
-  
+
     base16Scheme = {
       base00 = "190134";
       base01 = "392551";
@@ -41,4 +43,4 @@
       base0F = "470546";
     };
   };
-}
+                     }

@@ -142,6 +142,11 @@
     })
   ];
 
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true; 
+  };
+
   # Install Specific Nerd Fonts
   fonts.packages = [
     (pkgs.nerdfonts.override {

@@ -11,6 +11,16 @@
     };
     plugins = [
       {
+        name = "zsh-completions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-completions";
+          rev = "7a884c75b4f3ce2d8d24df8e55dcc359a020be3f";
+          sha256 = "sha256-ZMkGQT27PKi5yYT9eIF2yj8Hlk2oRIQTkY+J+aXZZ5E=";
+        };
+      }
+
+      {
         name = "zsh-autosuggestions";
         src = pkgs.fetchFromGitHub {
           owner = "zsh-users";

@@ -10,7 +10,7 @@
       window#waybar {
         border-width: 1pt;
         border-style: solid;
-        border-color: @base06;
+        border-color: @base0D;
       }
     '';
 
@@ -21,6 +21,7 @@
         width = 1350;
         height = 32;
         modules-left = [
+          "image"
           "hyprland/workspaces"
         ];
         modules-center = [
@@ -28,7 +29,7 @@
         ];
         modules-right = [
           "network"
-            "memory"
+          "memory"
           "battery"
           "pulseaudio"
         ];  
@@ -36,6 +37,10 @@
           format = " {:%r  %d/%m/%y}";
           interval = 1;
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+        image = {
+          path = "../nixos-logo.png";
+          size = 32;
         };
       };
     };
