@@ -3,21 +3,25 @@
     lsp = {
       enable = true;
       servers = {
+        clangd.enable = true;
+        eslint.enable = true;
+        jsonls.enable = true;
         lua-ls= {
           enable = true;
           settings.telemetry.enable = false;
         };
-        pyright.enable = true;
         nil-ls.enable = true;
-        clangd.enable = true;
-        eslint.enable = true;
-        jsonls.enable = true;
-        tsserver.enable = true;
+        pyright.enable = true;
         rust-analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
+        tsserver.enable = true;
+        zls.enable = true;
+      };
+      keymaps.lspBuf = {
+        gd = "definition";
       };
     };
     cmp-emoji = {enable = true;};
@@ -60,8 +64,7 @@
 
         mapping = {
           "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<C-j>" = "cmp.mapping.select_next_item()";
-          "<C-k>" = "cmp.mapping.select_prev_item()";
+          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
           "<C-e>" = "cmp.mapping.abort()";
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";

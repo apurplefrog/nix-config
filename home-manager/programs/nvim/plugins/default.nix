@@ -7,6 +7,7 @@
   programs.nixvim.plugins = {
     bufferline.enable = true;
     comment.enable = true;
+    crates-nvim.enable = true;
     image.enable = true;
     lualine.enable = true;
     nvim-tree.enable = true;

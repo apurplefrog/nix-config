@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    atlauncher
     audacity
     cmatrix
     eza
@@ -23,6 +24,7 @@
     python3
     ripgrep
     rustup
+    spotify
     tokei
     tor-browser
     tree
@@ -30,5 +32,6 @@
     vesktop
     vlc
     wl-clipboard
+    zig
   ];
 }

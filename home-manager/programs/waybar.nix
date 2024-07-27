@@ -18,7 +18,7 @@
       mainBar = {
         margin-top = 10;
         margin-left = 7;
-        width = 1350;
+        width = 1904;
         height = 32;
         modules-left = [
           "image"

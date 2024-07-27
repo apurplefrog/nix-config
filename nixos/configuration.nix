@@ -30,40 +30,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Enable the X11 windowing system.
-  #services.xserver = {
-  # enable = true;
-  # desktopManager = {
-  #   xterm.enable = false;
-  # };
-  # displayManager = {
-  #   defaultSession = "none+i3";
-  # };
-  # layout = "us";
-  # xkbVariant = "";
-  # windowManager.i3 = {
-  #   enable = true;
-  #   extraPackages = with pkgs; [
-  #     picom
-  #     polybar
-  #     feh
-  #     brightnessctl
-  #     i3lock #default i3 screen locker
-  #   ];
-  # };
-  # libinput = {
-  #   enable = true;
-  #   touchpad = {
-  #     naturalScrolling = true;
-  #     accelProfile = "flat"; 
-  #   };
-  # };
-  #;
+  programs.hyprland.enable = true;
 
-
-  programs.hyprland = {
-    enable = true;
-  };
+  nix.settings.auto-optimise-store = true;
 
   services.displayManager.sddm = {
     enable = true;
@@ -74,6 +43,14 @@
 
   programs.steam = {
     enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
   services.blueman.enable = true;
@@ -141,11 +118,6 @@
       fontSize = "12";
     })
   ];
-
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true; 
-  };
 
   # Install Specific Nerd Fonts
   fonts.packages = [

@@ -21,30 +21,42 @@
       }
 
       {
-        mode = ["n" "i" "v"];
+        mode = "n";
         key = "<c-l>";
         action = "<cmd>BufferLineCycleNext<cr>";
       }
 
       {
-        mode = ["n" "i" "v"];
+        mode = "n";
         key = "<c-h>";
         action = "<cmd>BufferLineCyclePrev<cr>";
       } 
 
 
       {
-        mode = ["n" "i" "v"];
+        mode = "n";
         key = "<c-j>";
         action = "<cmd>BufferLineGoToBuffer 1<cr>";
       } 
 
 
       {
-        mode = ["n" "i" "v"];
+        mode = "n";
         key = "<c-k>";
         action = "<cmd>BufferLineGoToBuffer -1<cr>";
       } 
+
+      {
+        mode = "n";
+        key = "<c-s>";
+        action = "<cmd>w<cr>";
+      }
+
+      {
+        mode = "v";
+        key = "<cs-c>";
+        action = "\"+y";
+      }
     ];
   };
 }

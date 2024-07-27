@@ -9,7 +9,7 @@
     ./kitty.nix
     ./mako.nix
     ./rofi.nix
-    ./spotify.nix
+#    ./spotify.nix
     ./waybar.nix
     ./yazi.nix
     ./zsh.nix

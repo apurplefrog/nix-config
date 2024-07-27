@@ -2,7 +2,6 @@
   description = "Home Manager configuration of autumn";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,13 +12,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    nixvim,
-    spicetify-nix,
-    stylix, 
-    ...}:
+  outputs = {self, nixpkgs, home-manager, spicetify-nix, ...}@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -31,8 +24,8 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          nixvim.homeManagerModules.nixvim
-          stylix.homeManagerModules.stylix
+          inputs.nixvim.homeManagerModules.nixvim
+          inputs.stylix.homeManagerModules.stylix
         ];
 
         # Optionally use extraSpecialArgs
