@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -30,9 +30,40 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  programs.hyprland.enable = true;
+  # Enable the X11 windowing system.
+#  services.xserver = {
+#   enable = true;
+#   desktopManager = {
+#     xterm.enable = false;
+#   };
+#   displayManager = {
+#     defaultSession = "none+i3";
+#   };
+#   layout = "us";
+#   xkbVariant = "";
+#   windowManager.i3 = {
+#     enable = true;
+#     extraPackages = with pkgs; [
+#       picom
+#       polybar
+#       feh
+#       brightnessctl
+#       i3lock #default i3 screen locker
+#     ];
+#   };
+#   libinput = {
+#     enable = true;
+#     touchpad = {
+#       naturalScrolling = true;
+#       accelProfile = "flat"; 
+#     };
+ #  };
+ # };
 
-  nix.settings.auto-optimise-store = true;
+
+  programs.hyprland = {
+    enable = true;
+  };
 
   services.displayManager.sddm = {
     enable = true;
@@ -43,14 +74,6 @@
 
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
-  };
-
-  programs.gamemode.enable = true;
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
   };
 
   services.blueman.enable = true;
@@ -86,7 +109,8 @@
     isNormalUser = true;
     description = "Autumn Baker";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = [
+    packages = with pkgs; [
+    #  thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -109,6 +133,7 @@
     wget
     networkmanagerapplet
     home-manager
+    flatpak
     gparted
     hyprpaper
     (pkgs.catppuccin-sddm.override {
@@ -125,13 +150,13 @@
         "CascadiaCode"
       ];
     })
+    pkgs.fira-mono
   ];
 
   # Set defult applications
   environment.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "firefox";
-    TERMINAL = "kitty";
     SUDO_EDITOR = "nvim";
   };
 
