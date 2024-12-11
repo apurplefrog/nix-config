@@ -12,7 +12,6 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-
-    colorschemes.catppuccin.enable = true;
+    colorschemes.gruvbox.enable = true;
   };
 }

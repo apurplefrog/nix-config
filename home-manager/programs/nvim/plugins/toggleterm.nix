@@ -6,6 +6,7 @@
       float_opts = {
         border = "curved";
       };
+      shell = "zsh";
     };
   };
 }

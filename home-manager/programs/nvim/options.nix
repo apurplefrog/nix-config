@@ -33,6 +33,8 @@
       scrolloff = 10;
 
       cursorline = true;
+
+      wildmenu = true;
     };
   };
 }
