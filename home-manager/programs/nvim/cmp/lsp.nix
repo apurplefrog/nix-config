@@ -6,18 +6,17 @@
         clangd.enable = true;
         eslint.enable = true;
         jsonls.enable = true;
-        lua-ls= {
+        lua_ls = {
           enable = true;
           settings.telemetry.enable = false;
         };
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         pyright.enable = true;
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
-        tsserver.enable = true;
         zls.enable = true;
       };
       keymaps.lspBuf = {
@@ -81,7 +80,7 @@
     cmp-cmdline = {enable = false;}; # autocomplete for cmdline
     luasnip = {
       enable = true;
-      extraConfig = {
+      settings = {
         enable_autosnippets = true;
         store_selection_keys = "<Tab>";
       };

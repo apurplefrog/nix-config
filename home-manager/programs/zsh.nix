@@ -1,12 +1,17 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      "ls" = "exa --all --icons";
+      "ll" = "exa --all -l --icons";
+    };
     oh-my-zsh = {
       enable = true;
       theme = "sorin";
       plugins = [
         "git"
         "sudo"
+        "colored-man-pages"
       ];
     };
     plugins = [
@@ -37,6 +42,17 @@
           repo = "zsh-syntax-highlighting";
           rev = "e0165eaa730dd0fa321a6a6de74f092fe87630b0";
           sha256 = "sha256-4rW2N+ankAH4sA6Sa5mr9IKsdAg7WTgrmyqJ2V1vygQ=";
+        };
+      }
+
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "82ca15e638cc208e6d8368e34a1625ed75e08f90";
+          sha256 = "sha256-Rtg8kWVLhXRuD2/Ctbtgz9MQCtKZOLpAIdommZhXKdE=";
         };
       }
     ];

@@ -13,6 +13,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

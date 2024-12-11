@@ -1,150 +1,155 @@
-{pkgs, lib, ...}: {
-  services.hyprpaper.enable = true;
-  home.packages = [ pkgs.hyprpicker ];
-  wayland.windowManager.hyprland = {
+{pkgs, ...}: {
+  services.hyprpaper = 
+  let
+    background-image = ".config/home-manager/theme/background-images/pixel.png";
+  in
+  {
     enable = true;
-    xwayland.enable = true;
-    systemd.enable = true;
     settings = {
-      "$terminal" = "kitty";
-      "$fileManager" = "thunar";
-      "$menu" = "rofi -show drun";
-      "$screenshot" = "hyprshot -z -m region --clipboard-only";
-      "$powerMenu" = "rofi -show power-menu -modi power-menu:rofi-power-menu";
+      ipc = "on";
+      splash = true;
+#    splash_offset = 2.0;
 
-      exec-once = "waybar & hyprpaper";
+      preload =
+        [ background-image ];
 
-      env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
+      wallpaper = [
+        "HDMI-A-1,${background-image}"
       ];
-
-      general = {
-        gaps_in = 5;
-        gaps_out = 10;
-        border_size = 2;
-        "col.inactive_border" = lib.mkForce "rgba(595959aa)";
-        resize_on_border = false;
-        allow_tearing = false;
-        layout = "dwindle";
-      };
-
-      decoration = {
-        rounding = 10;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        blur = {
-          enabled = "yes";
-          special = true;
-          size = 6;
-          passes = 3;
-          new_optimizations = "on";
-          ignore_opacity = "on";
-          xray = false;
-        };
-      };
-
-      animations = {
-        enabled = true;
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
-        ];
-      };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      misc = {
-        force_default_wallpaper = 0;
-        disable_hyprland_logo = true;
-      };
-
-      input = {
-        kb_layout = "us";
-        follow_mouse = 1;
-        sensitivity = 0;
-        touchpad.natural_scroll = true;
-      };
-
-      gestures.workspace_swipe = false;
-
-      device = {
-        name = "epic-mouse-v1";
-        sensitivity = -0.5;
-      };
-
-      "$mainMod" = "SUPER";
-
-      bind = [
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive"
-        "$mainMod, M, exit"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating"
-        "$mainMod, D, exec, $menu"
-        "$mainMod, P, pseudo"
-        "$mainMod, T, togglesplit"
-        "$mainMod, S, exec, $screenshot"
-        "$mainMod SHIFT, P, exec, $powerMenu"
-        "$mainMod, F, fullscreen"
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-        "$mainMod, H, movefocus, l"
-        "$mainMod, L, movefocus, r"
-        "$mainMod, K, movefocus, u"
-        "$mainMod, J, movefocus, d"
-        "$mainMod SHIFT, H, movewindow, l"
-        "$mainMod SHIFT, L, movewindow, r"
-        "$mainMod SHIFT, K, movewindow, u"
-        "$mainMod SHIFT, J, movewindow, d"
-        "$mainMod SHIFT, left, movewindow, l"
-        "$mainMod SHIFT, right, movewindow, r"
-        "$mainMod SHIFT, up, movewindow, u"
-        "$mainMod SHIFT, down, movewindow, d"
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-      ];
-
-      bindm = [
-        "$mainMod, mouse:272, movewindow"
-        "$mainMod, mouse:273, resizewindow"
-      ];
-
-      windowrule = "opacity 0.8,^(kitty)$";
-      windowrulev2 = "suppressevent maximize, class:.*";
     };
   };
+  home.file.".config/hypr/hyprland.conf".text = ''
+$fileManager=thunar
+$mainMod=SUPER
+$menu=rofi -show drun
+$powerMenu=rofi -show power-menu -modi power-menu:rofi-power-menu
+$screenshot=hyprshot -m region --clipboard-only
+$terminal=foot
+animations {
+  bezier=myBezier, 0.05, 0.9, 0.1, 1.05
+  animation=windows, 1, 7, myBezier
+  animation=windowsOut, 1, 7, default, popin 80%
+  animation=border, 1, 10, default
+  animation=borderangle, 1, 8, default
+  animation=fade, 1, 7, default
+  animation=workspaces, 1, 6, default
+  enabled=true
+}
+
+decoration {
+  blur {
+    enabled=yes
+    ignore_opacity=on
+    new_optimizations=on
+    passes=3
+    size=6
+    special=true
+    xray=false
+  }
+  active_opacity=1.000000
+  col.shadow=rgba(00000099)
+  drop_shadow=true
+  inactive_opacity=1.000000
+  rounding=10
+  shadow_range=4
+  shadow_render_power=3
+}
+
+dwindle {
+  preserve_split=true
+  pseudotile=true
+}
+
+general {
+  allow_tearing=false
+  border_size=2
+  col.active_border=rgb(5bcefa) rgb(cba6f7) 45deg
+  col.inactive_border=rgba(595959aa)
+  gaps_in=5
+  gaps_out=10
+  layout=dwindle
+  resize_on_border=false
+}
+
+gestures {
+  workspace_swipe=false
+}
+
+group {
+  col.border_active=rgb(5bcefa) rgb(f5a9b8) 45deg
+  col.border_inactive=rgb(888888)
+}
+
+input {
+  touchpad {
+    natural_scroll=true
+  }
+  kb_layout=us
+}
+
+misc {
+  disable_hyprland_logo=true
+  force_default_wallpaper=0
+}
+bind=$mainMod, Q, exec, $terminal
+bind=$mainMod, C, killactive
+bind=$mainMod, M, exit
+bind=$mainMod, E, exec, $fileManager
+bind=$mainMod, V, togglefloating
+bind=$mainMod, D, exec, $menu
+bind=$mainMod, P, pseudo
+bind=$mainMod, T, togglesplit
+bind=$mainMod, S, exec, $screenshot
+bind=$mainMod SHIFT, P, exec, $powerMenu
+bind=$mainMod, F, fullscreen
+bind=$mainMod, left, movefocus, l
+bind=$mainMod, right, movefocus, r
+bind=$mainMod, up, movefocus, u
+bind=$mainMod, down, movefocus, d
+bind=$mainMod, H, movefocus, l
+bind=$mainMod, L, movefocus, r
+bind=$mainMod, K, movefocus, u
+bind=$mainMod, J, movefocus, d
+bind=$mainMod SHIFT, H, movewindow, l
+bind=$mainMod SHIFT, L, movewindow, r
+bind=$mainMod SHIFT, K, movewindow, u
+bind=$mainMod SHIFT, J, movewindow, d
+bind=$mainMod SHIFT, left, movewindow, l
+bind=$mainMod SHIFT, right, movewindow, r
+bind=$mainMod SHIFT, up, movewindow, u
+bind=$mainMod SHIFT, down, movewindow, d
+bind=$mainMod, 1, workspace, 1
+bind=$mainMod, 2, workspace, 2
+bind=$mainMod, 3, workspace, 3
+bind=$mainMod, 4, workspace, 4
+bind=$mainMod, 5, workspace, 5
+bind=$mainMod, 6, workspace, 6
+bind=$mainMod, 7, workspace, 7
+bind=$mainMod, 8, workspace, 8
+bind=$mainMod, 9, workspace, 9
+bind=$mainMod, 0, workspace, 10
+bind=$mainMod SHIFT, 1, movetoworkspace, 1
+bind=$mainMod SHIFT, 2, movetoworkspace, 2
+bind=$mainMod SHIFT, 3, movetoworkspace, 3
+bind=$mainMod SHIFT, 4, movetoworkspace, 4
+bind=$mainMod SHIFT, 5, movetoworkspace, 5
+bind=$mainMod SHIFT, 6, movetoworkspace, 6
+bind=$mainMod SHIFT, 7, movetoworkspace, 7
+bind=$mainMod SHIFT, 8, movetoworkspace, 8
+bind=$mainMod SHIFT, 9, movetoworkspace, 9
+bind=$mainMod SHIFT, 0, movetoworkspace, 10
+bind=$mainMod, mouse_down, workspace, e+1
+bind=$mainMod, mouse_up, workspace, e-1
+bindm=$mainMod, mouse:272, movewindow
+bindm=$mainMod, mouse:273, resizewindow
+env=XCURSOR_SIZE,24
+env=HYPRCURSOR_SIZE,24
+exec-once=waybar & hyprpaper
+windowrulev2=suppressevent maximize, class:.*
+    '';
+  home.packages = with pkgs; [
+    hyprpicker
+    hyprshot
+    waybar
+  ];
 }

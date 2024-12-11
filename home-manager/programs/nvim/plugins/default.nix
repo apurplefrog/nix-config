@@ -13,5 +13,6 @@
     nvim-tree.enable = true;
     nvim-autopairs.enable = true;
     treesitter.enable = true;
+    web-devicons.enable = true;
   };
 }

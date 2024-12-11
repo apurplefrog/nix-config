@@ -6,11 +6,14 @@
     ./btop.nix
     ./cava.nix
     ./fastfetch.nix
-    ./kitty.nix
+    ./firefox.nix
+    ./foot.nix
+#    ./kitty.nix
     ./mako.nix
     ./rofi.nix
-#    ./spotify.nix
-    ./waybar.nix
+    ./starship.nix
+    ./spotify.nix
+#    ./waybar.nix
     ./yazi.nix
     ./zsh.nix
   ];

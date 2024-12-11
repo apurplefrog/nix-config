@@ -86,8 +86,7 @@
     isNormalUser = true;
     description = "Autumn Baker";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
+    packages = [
     ];
     shell = pkgs.zsh;
   };

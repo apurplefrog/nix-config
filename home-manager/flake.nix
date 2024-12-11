@@ -8,11 +8,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
-    stylix.url = "github:danth/stylix";
+#    stylix.url = "github:danth/stylix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = {self, nixpkgs, home-manager, spicetify-nix, ...}@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    spicetify-nix,
+    ...
+  }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,17 +30,15 @@
       homeConfigurations."autumn" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [
           ./home.nix
           inputs.nixvim.homeManagerModules.nixvim
-          inputs.stylix.homeManagerModules.stylix
+          inputs.catppuccin.homeManagerModules.catppuccin
+#          inputs.stylix.homeManagerModules.stylix
+          inputs.spicetify-nix.homeManagerModules.default
         ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-        extraSpecialArgs = {inherit spicetify-nix;};
+        extraSpecialArgs = {inherit inputs;};
       };
     };
 }

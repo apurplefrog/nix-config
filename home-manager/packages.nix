@@ -1,37 +1,30 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    atlauncher
     audacity
-    cmatrix
+    blender
     eza
     file
-    firefox
     fzf
-    gcc
-    gdb
     ghidra
     gimp
     git
-    hyprshot
+    grim
     killall
+    libreoffice
+    libresprite
     lunar-client
     man-pages
     man-pages-posix
-    nasm
-    nix-prefetch-git
-    nodejs_22
     obs-studio
     python3
+    prismlauncher
     ripgrep
-    rustup
-    spotify
-    tokei
+    slurp
+    telegram-desktop
     tor-browser
-    tree
     unzip
     vesktop
     vlc
     wl-clipboard
-    zig
   ];
 }

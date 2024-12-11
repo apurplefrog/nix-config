@@ -12,5 +12,7 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    colorschemes.catppuccin.enable = true;
   };
 }
