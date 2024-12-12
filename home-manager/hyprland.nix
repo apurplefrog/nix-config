@@ -47,12 +47,14 @@ decoration {
     xray=false
   }
   active_opacity=1.000000
-  col.shadow=rgba(00000099)
-  drop_shadow=true
   inactive_opacity=1.000000
   rounding=10
-  shadow_range=4
-  shadow_render_power=3
+  shadow {
+    color=rgba(00000099)
+    enabled=true
+    range=4
+    render_power=3
+  }
 }
 
 dwindle {
