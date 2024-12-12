@@ -3,17 +3,17 @@
     lsp = {
       enable = true;
       servers = {
-        lua-ls= {
+        lua_ls = {
           enable = true;
           settings.telemetry.enable = false;
         };
         pyright.enable = true;
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         clangd.enable = true;
         eslint.enable = true;
         jsonls.enable = true;
-        ts-ls.enable = true;
-        rust-analyzer = {
+        ts_ls.enable = true;
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
