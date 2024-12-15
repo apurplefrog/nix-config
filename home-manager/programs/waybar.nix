@@ -5,9 +5,13 @@
     "position": "top",
     "width": 1904,
     "spacing": 4,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/icon", "hyprland/workspaces", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "battery", "battery#bat2", "tray"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "battery", "battery#bat2"],
+    "custom/icon": {
+        "format": "  ",
+        "tooltip": false
+    },
     "tray": {
         "spacing": 10
     },
@@ -55,7 +59,6 @@
             "default": ["", "", ""]
         },
         "on-click-right": "pavucontrol",
-#        "on-click": "foot -a pw-top pw-top"
     },
 }
   '';
@@ -181,6 +184,7 @@ window#waybar.hidden {
 	background: #96CDFB;
 }
 
+#custom-icon,
 #tray {
 	margin-top: 6px;
 	margin-left: 8px;
@@ -189,7 +193,7 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-	color: #B5E8E0;
+	color: #7eb3df;
 	background: #161320;
 }
 
@@ -211,19 +215,6 @@ window#waybar.hidden {
 #workspaces button.active {
   color: #cba6f7;
 }
-
-#custom-launcher {
-	font-size: 24px;
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 10px;
-	transition: none;
-  color: #89DCEB;
-  background: #161320;
-}
-
     '';
   };
 }
