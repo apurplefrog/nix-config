@@ -8,12 +8,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
-#    stylix.url = "github:danth/stylix";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    vesktop-nix = {
+      url = "github:PierreBorine/vesktop-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -21,6 +24,7 @@
     nixpkgs,
     home-manager,
     spicetify-nix,
+    vesktop-nix,
     ...
   }@inputs:
     let
@@ -36,6 +40,7 @@
           inputs.catppuccin.homeManagerModules.catppuccin
 #          inputs.stylix.homeManagerModules.stylix
           inputs.spicetify-nix.homeManagerModules.default
+#          inputs.vesktop-nix.homeManagerModules.default
         ];
 
         extraSpecialArgs = {inherit inputs;};

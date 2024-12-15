@@ -334,7 +334,8 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "vesktop-nix": "vesktop-nix"
       }
     },
     "spicetify-nix": {
@@ -391,6 +392,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "vesktop-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731527104,
+        "narHash": "sha256-wrO9wKi8QWke8QZslRsmv+RYIGiRarPbBzAiqdmrLfk=",
+        "owner": "PierreBorine",
+        "repo": "vesktop-nix",
+        "rev": "31ee11cdb159cef42190b67e287024486fb2d33a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PierreBorine",
+        "repo": "vesktop-nix",
         "type": "github"
       }
     }

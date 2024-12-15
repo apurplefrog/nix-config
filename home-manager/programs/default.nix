@@ -13,7 +13,8 @@
     ./rofi.nix
     ./starship.nix
     ./spotify.nix
-#    ./waybar.nix
+    ./vesktop.nix
+    ./waybar.nix
     ./yazi.nix
     ./zsh.nix
   ];

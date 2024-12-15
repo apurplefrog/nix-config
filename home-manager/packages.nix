@@ -9,6 +9,7 @@
     gimp
     git
     grim
+    kdenlive
     killall
     libreoffice
     libresprite
@@ -23,7 +24,6 @@
     telegram-desktop
     tor-browser
     unzip
-    vesktop
     vlc
     wl-clipboard
   ];
