@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./theme
     ./programs
@@ -18,6 +18,11 @@
     flavor = "mocha";
   };
 
-  # Let Home Manager install and manage itself.
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 12;
+  };
+
   programs.home-manager.enable = true;
 }
