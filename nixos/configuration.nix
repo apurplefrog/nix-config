@@ -24,42 +24,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Enable the X11 windowing system.
-#  services.xserver = {
-#   enable = true;
-#   desktopManager = {
-#     xterm.enable = false;
-#   };
-#   displayManager = {
-#     defaultSession = "none+i3";
-#   };
-#   layout = "us";
-#   xkbVariant = "";
-#   windowManager.i3 = {
-#     enable = true;
-#     extraPackages = with pkgs; [
-#       picom
-#       polybar
-#       feh
-#       brightnessctl
-#       i3lock #default i3 screen locker
-#     ];
-#   };
-#   libinput = {
-#     enable = true;
-#     touchpad = {
-#       naturalScrolling = true;
-#       accelProfile = "flat"; 
-#     };
- #  };
- # };
-
 
   programs.hyprland = {
     enable = true;
@@ -82,7 +53,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -145,11 +115,7 @@
 
   # Install Specific Nerd Fonts
   fonts.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "CascadiaCode"
-      ];
-    })
+    pkgs.nerd-fonts.caskaydia-cove
     pkgs.fira-mono
   ];
 
