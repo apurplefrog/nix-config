@@ -8,7 +8,6 @@
     ./fastfetch.nix
     ./firefox.nix
     ./foot.nix
-#    ./kitty.nix
     ./mako.nix
     ./rofi.nix
     ./starship.nix
