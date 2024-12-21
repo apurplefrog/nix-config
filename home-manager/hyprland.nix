@@ -14,7 +14,7 @@
         [ background-image ];
 
       wallpaper = [
-        "HDMI-A-1,${background-image}"
+        "HDMI-A-2,${background-image}"
       ];
     };
   };
