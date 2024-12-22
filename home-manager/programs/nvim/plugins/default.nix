@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./rustaceanvim.nix
     ./telescope.nix
     ./toggleterm.nix
   ];
