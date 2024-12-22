@@ -1,23 +1,33 @@
 {pkgs, ...}: {
-  services.hyprpaper = 
-  let
-    background-image = ".config/home-manager/theme/background-images/pixel.png";
-  in
-  {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = true;
-#    splash_offset = 2.0;
+#  services.hyprpaper = 
+#  let
+#    background-image = "./pixel.jpg";
+#  in
+#  {
+#    enable = true;
+#    settings = {
+#      ipc = "on";
+#      splash = true;
+#
+#      preload =
+#        [ background-image ];
+#
+#      wallpaper = [
+#        "HDMI-A-1,${background-image}"
+#        "HDMI-A-2,${background-image}"
+#        "eDP-1,${background-image}"
+#      ];
+#    };
+#  };
 
-      preload =
-        [ background-image ];
+home.packages = with pkgs; [
+    hyprpicker
+    hyprshot
+    swww
+    wbg
+  ];
 
-      wallpaper = [
-        "HDMI-A-2,${background-image}"
-      ];
-    };
-  };
+
   home.file.".config/hypr/hyprland.conf".text = ''
 $fileManager=thunar
 $mainMod=SUPER
@@ -146,12 +156,7 @@ bindm=$mainMod, mouse:272, movewindow
 bindm=$mainMod, mouse:273, resizewindow
 env=XCURSOR_SIZE,24
 env=HYPRCURSOR_SIZE,24
-exec-once=waybar & hyprpaper
+exec-once=wbg ~/.config/home-manager/pixel.png & hyprpaper
 windowrulev2=suppressevent maximize, class:.*
     '';
-  home.packages = with pkgs; [
-    hyprpicker
-    hyprshot
-    waybar
-  ];
-}
+  }
