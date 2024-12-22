@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./theme
     ./programs
 
     ./hyprland.nix
