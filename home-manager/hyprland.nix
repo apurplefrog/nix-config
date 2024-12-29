@@ -95,6 +95,7 @@ group {
 input {
   touchpad {
     natural_scroll=true
+    disable_while_typing=0
   }
   kb_layout=us
 }
@@ -156,7 +157,7 @@ bindm=$mainMod, mouse:272, movewindow
 bindm=$mainMod, mouse:273, resizewindow
 env=XCURSOR_SIZE,24
 env=HYPRCURSOR_SIZE,24
-exec-once=wbg ~/.config/home-manager/pixel.png & hyprpaper
+exec-once=wbg ~/.config/home-manager/pixel.png & waybar
 windowrulev2=suppressevent maximize, class:.*
     '';
   }
