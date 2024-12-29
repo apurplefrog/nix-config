@@ -3,6 +3,7 @@
     lsp = {
       enable = true;
       servers = {
+        asm_lsp.enable = true;
         lua_ls = {
           enable = true;
           settings.telemetry.enable = false;
@@ -11,13 +12,9 @@
         nil_ls.enable = true;
         clangd.enable = true;
         eslint.enable = true;
+        html.enable = true;
         jsonls.enable = true;
         ts_ls.enable = true;
-#        rust_analyzer = {
-#          enable = true;
-#          installCargo = true;
-#          installRustc = true;
-#        };
       };
     };
     cmp-emoji = {enable = true;};
