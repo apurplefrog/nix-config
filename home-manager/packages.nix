@@ -11,6 +11,7 @@
     grim
     kdenlive
     killall
+    lazygit
     libreoffice
     libresprite
     lunar-client
