@@ -4,6 +4,7 @@
     blender
     eza
     file
+    flameshot
     fzf
     ghidra
     gimp

@@ -33,7 +33,6 @@ $fileManager=thunar
 $mainMod=SUPER
 $menu=rofi -show drun
 $powerMenu=rofi -show power-menu -modi power-menu:rofi-power-menu
-$screenshot=hyprshot -m region --clipboard-only
 $terminal=foot
 animations {
   bezier=myBezier, 0.05, 0.9, 0.1, 1.05
@@ -112,7 +111,6 @@ bind=$mainMod, V, togglefloating
 bind=$mainMod, D, exec, $menu
 bind=$mainMod, P, pseudo
 bind=$mainMod, T, togglesplit
-bind=$mainMod, S, exec, $screenshot
 bind=$mainMod SHIFT, P, exec, $powerMenu
 bind=$mainMod, F, fullscreen
 bind=$mainMod, left, movefocus, l
@@ -157,7 +155,7 @@ bindm=$mainMod, mouse:272, movewindow
 bindm=$mainMod, mouse:273, resizewindow
 env=XCURSOR_SIZE,24
 env=HYPRCURSOR_SIZE,24
-exec-once=wbg ~/.config/home-manager/pixel.png & waybar
+exec-once=wbg ~/.config/home-manager/pixel.png & waybar & flameshot
 windowrulev2=suppressevent maximize, class:.*
     '';
   }
