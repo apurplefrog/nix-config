@@ -51,6 +51,24 @@
         key = "<leader><leader>";
         action = "<cmd>Yazi<cr>";
       }
+
+      {
+        mode = "n";
+        key = "<leader>a";
+        action = "<cmd>AerialToggle<cr>";
+      }
+
+      {
+        mode = "n";
+        key = "{";
+        action = "<cmd>AerialPrev<cr>";
+      }
+
+      {
+        mode = "n";
+        key = "}";
+        action = "<cmd>AerialNext<cr>";
+      }
     ];
   };
 }
