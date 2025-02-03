@@ -10,6 +10,7 @@ in
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-wayland;
     policies = {
       DisableTelemtry = true;
       DisableFirefoxStudies = true;
