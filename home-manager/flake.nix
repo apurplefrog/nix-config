@@ -38,9 +38,7 @@
           ./home.nix
           inputs.nixvim.homeManagerModules.nixvim
           inputs.catppuccin.homeManagerModules.catppuccin
-#          inputs.stylix.homeManagerModules.stylix
           inputs.spicetify-nix.homeManagerModules.default
-#          inputs.vesktop-nix.homeManagerModules.default
         ];
 
         extraSpecialArgs = {inherit inputs;};
