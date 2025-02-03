@@ -1,30 +1,8 @@
 {pkgs, ...}: {
-#  services.hyprpaper = 
-#  let
-#    background-image = "./pixel.jpg";
-#  in
-#  {
-#    enable = true;
-#    settings = {
-#      ipc = "on";
-#      splash = true;
-#
-#      preload =
-#        [ background-image ];
-#
-#      wallpaper = [
-#        "HDMI-A-1,${background-image}"
-#        "HDMI-A-2,${background-image}"
-#        "eDP-1,${background-image}"
-#      ];
-#    };
-#  };
-
 home.packages = with pkgs; [
     hyprpicker
     hyprshot
     swww
-    wbg
   ];
 
 
@@ -33,7 +11,8 @@ $fileManager=thunar
 $mainMod=SUPER
 $menu=rofi -show drun
 $powerMenu=rofi -show power-menu -modi power-menu:rofi-power-menu
-$terminal=foot
+$screenshot=slurp | grim -g - - | wl-copy
+$terminal=ghostty
 animations {
   bezier=myBezier, 0.05, 0.9, 0.1, 1.05
   animation=windows, 1, 7, myBezier
@@ -55,8 +34,8 @@ decoration {
     special=true
     xray=false
   }
-  active_opacity=1.000000
-  inactive_opacity=1.000000
+#  active_opacity=1.000000
+#  inactive_opacity=1.000000
   rounding=10
   shadow {
     color=rgba(00000099)
@@ -111,7 +90,9 @@ bind=$mainMod, V, togglefloating
 bind=$mainMod, D, exec, $menu
 bind=$mainMod, P, pseudo
 bind=$mainMod, T, togglesplit
+bind=$mainMod, S, exec, $screenshot
 bind=$mainMod SHIFT, P, exec, $powerMenu
+bind=$mainMod SHIFT, S, exec, $screenshot
 bind=$mainMod, F, fullscreen
 bind=$mainMod, left, movefocus, l
 bind=$mainMod, right, movefocus, r
@@ -155,7 +136,9 @@ bindm=$mainMod, mouse:272, movewindow
 bindm=$mainMod, mouse:273, resizewindow
 env=XCURSOR_SIZE,24
 env=HYPRCURSOR_SIZE,24
-exec-once=wbg ~/.config/home-manager/pixel.png & waybar & flameshot
+exec-once=swww-daemon & swww img .config/home-manager/pixel.png
+exec-once=waybar & flameshot
 windowrulev2=suppressevent maximize, class:.*
+windowrulev2 = opacity 0.9, class:(ghostty)
     '';
   }
