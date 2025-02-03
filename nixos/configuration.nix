@@ -13,6 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -24,13 +25,15 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
-
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
+
+  services.udev.extraRules = ''
+    KERNEL=="ttyACM[0-9]*",MODE="0666"
+  '';
 
   programs.hyprland = {
     enable = true;
@@ -53,7 +56,7 @@ system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -95,15 +98,14 @@ system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
   
   programs.zsh.enable = true;
 
-  programs.thunar.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pavucontrol
     wget
     networkmanagerapplet
+    nh
     home-manager
-    flatpak
     gparted
     hyprpaper
     (pkgs.catppuccin-sddm.override {
@@ -116,6 +118,7 @@ system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable";
   # Install Specific Nerd Fonts
   fonts.packages = [
     pkgs.nerd-fonts.caskaydia-cove
+    pkgs.nerd-fonts.fantasque-sans-mono
     pkgs.fira-mono
   ];
 
