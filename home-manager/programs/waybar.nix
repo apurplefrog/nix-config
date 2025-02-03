@@ -68,7 +68,7 @@
 * {
 	border: none;
 	border-radius: 10;
-  font-family: "Caskaydia Cove Nerd Font" ;
+  font-family: "FantasqueSansM Nerd Font" ;
 	font-size: 15px;
 	min-height: 10px;
 }
