@@ -26,7 +26,7 @@
     in {
       "*" = {
         width = 600;
-        font = "Caskaydia Cove";
+        font = "FantasqueSansM Nerd Font";
       };
 
       "element-text, element-icon, mode-switcher" = {
