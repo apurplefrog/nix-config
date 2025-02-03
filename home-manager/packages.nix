@@ -6,12 +6,12 @@
     file
     flameshot
     fzf
-    ghidra
     gimp
     git
     grim
     kdenlive
     killall
+    krita
     lazygit
     libreoffice
     libresprite
