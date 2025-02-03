@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./programs
-
     ./hyprland.nix
     ./packages.nix
   ];
@@ -15,6 +14,7 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    accent = "mauve";
   };
 
   home.pointerCursor = {
