@@ -103,6 +103,7 @@ window#waybar.hidden {
 	background: #bd93f9;
 }
 
+#temperature,
 #pulseaudio {
 	margin-top: 6px;
 	margin-left: 8px;
