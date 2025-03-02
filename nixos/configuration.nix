@@ -80,7 +80,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.autumn = {
     isNormalUser = true;
-    description = "Autumn Baker";
+    description = "Autumn";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
@@ -107,7 +107,6 @@
     nh
     home-manager
     gparted
-    hyprpaper
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       font = "CaskaydiaCove Nerd Font";
