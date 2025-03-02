@@ -10,7 +10,13 @@
         };
         pyright.enable = true;
         nil_ls.enable = true;
-        clangd.enable = true;
+        clangd = {
+          enable = true;
+          cmd = [
+            "clangd"
+            "--fallback-style=llvm"
+          ];
+        };
         eslint.enable = true;
         html.enable = true;
         jsonls.enable = true;
