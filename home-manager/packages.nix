@@ -9,6 +9,7 @@
     fzf
     gimp
     git
+    godot_4
     grim
     kdenlive
     killall
