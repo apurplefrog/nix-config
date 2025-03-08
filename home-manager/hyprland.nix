@@ -1,10 +1,8 @@
 {pkgs, ...}: {
 home.packages = with pkgs; [
     hyprpicker
-    hyprshot
     swww
   ];
-
 
   home.file.".config/hypr/hyprland.conf".text = ''
 $fileManager=thunar
@@ -137,7 +135,7 @@ bindm=$mainMod, mouse:273, resizewindow
 env=XCURSOR_SIZE,24
 env=HYPRCURSOR_SIZE,24
 exec-once=swww-daemon & swww img .config/home-manager/pixel.png
-exec-once=waybar & flameshot
+exec-once=waybar
 windowrulev2=suppressevent maximize, class:.*
 windowrulev2 = opacity 0.9, class:(ghostty)
     '';
