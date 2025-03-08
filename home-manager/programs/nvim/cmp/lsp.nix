@@ -14,7 +14,7 @@
           enable = true;
           cmd = [
             "clangd"
-            "--fallback-style=llvm"
+            "--fallback-style=webkit"
           ];
         };
         eslint.enable = true;
