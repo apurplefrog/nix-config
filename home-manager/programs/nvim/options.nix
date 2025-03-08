@@ -6,10 +6,10 @@
       number = true;
       relativenumber = true;
 
-      tabstop = 2;
-      softtabstop = 2;
-      showtabline = 2;
-      shiftwidth = 2;
+      tabstop = 4;
+      softtabstop = 4;
+      showtabline = 4;
+      shiftwidth = 4;
       expandtab = true;
       smartindent = true;
       breakindent = true;
