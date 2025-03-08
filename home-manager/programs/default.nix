@@ -6,7 +6,7 @@
     ./btop.nix
     ./cava.nix
     ./fastfetch.nix
-    ./firefox.nix
+    ./floorp.nix
     ./foot.nix
     ./ghostty.nix
     ./mako.nix
